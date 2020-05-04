@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import ListForm from "./components/ListForm";
 import GroceryList from "./components/GroceryList";
+import "./styles.css";
 
 const groceries = [
   {
@@ -46,11 +48,12 @@ class App extends React.Component {
 
   //Class method to update state
   //use arrow funciton to have access to 'this'
-  toggleItem = itemId() {
-    this.setState({
+  toggleItem = itemId => {
+    console.log(itemId);
+    //this.setState({
 
-    })
-  }
+    //})
+  };
   //const [groceries, toggleItem] = useState(); The functional way!!!
 
   //<ListForm />
@@ -59,12 +62,15 @@ class App extends React.Component {
       <div className="App">
         <div className="header">
           <h1>Shopping List</h1>
+          <ListForm addItemFunctionThing={this.addItem} />
         </div>
-        <GroceryList groceries={this.state.groceryList} />
+        <GroceryList
+          groceries={this.state.groceryList}
+          toggleItem={this.toggleItem}
+        />
       </div>
     );
   }
 }
-
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);

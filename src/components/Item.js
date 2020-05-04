@@ -4,8 +4,11 @@ const Item = props => {
   return (
     <div
       onClick={() => {
-        console.log("I'm clicked");
+        props.toggleItem(props.item.id);
       }}
+      //=> {
+      //console.log("I'm clicked");
+      //  }}
       className={`item${props.item.purchased ? "purchased" : ""}`}
     >
       <p>{props.item.name}</p>

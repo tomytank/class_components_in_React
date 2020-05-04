@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import ListForm from "./components/ListForm";
+import GroceryList from "./components/GroceryList";
 
 const groceries = [
   {
@@ -37,17 +39,28 @@ class App extends React.Component {
   //Constructor with state
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      groceryList: groceries
+    };
   }
 
+  //Class method to update state
+  //use arrow funciton to have access to 'this'
+  toggleItem = itemId() {
+    this.setState({
+
+    })
+  }
+  //const [groceries, toggleItem] = useState(); The functional way!!!
+
+  //<ListForm />
   render() {
     return (
       <div className="App">
         <div className="header">
           <h1>Shopping List</h1>
-          <ListForm />
         </div>
-        <GroceryList groceries={groceries} />
+        <GroceryList groceries={this.state.groceryList} />
       </div>
     );
   }

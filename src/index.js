@@ -39,12 +39,10 @@ const groceries = [
 ];
 
 class App extends React.Component {
-  //Constructor with state
+  // Constructor with state
   constructor() {
     super();
-    this.state = {
-      groceryList: groceries
-    };
+    this.state = { groceryList: groceries };
   }
 
   //Class method to update state

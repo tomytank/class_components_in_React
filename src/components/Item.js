@@ -1,5 +1,5 @@
 import React from "react";
-
+//functional component
 const Item = props => {
   return (
     <div

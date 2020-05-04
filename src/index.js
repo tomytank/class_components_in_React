@@ -37,19 +37,21 @@ class App extends React.Component {
   //Constructor with state
   constructor() {
     super();
-
+    this.state = {};
   }
+
   render() {
-    return(
+    return (
       <div className="App">
         <div className="header">
           <h1>Shopping List</h1>
           <ListForm />
-          </div>
-          <GroceryList groceries= {groceries} />
-    )
+        </div>
+        <GroceryList groceries={groceries} />
+      </div>
+    );
   }
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />,rootElement);
+ReactDOM.render(<App />, rootElement);

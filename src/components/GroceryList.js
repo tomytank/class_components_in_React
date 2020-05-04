@@ -8,7 +8,7 @@ const GroceryList = props => {
   return (
     <div className="shopping-List">
       {props.groceries.map(item => (
-        <Item key={item.id} toggleItem={props.toggleItem} item={item} />
+        <Item key={item.id} item={item} toggleItem={props.toggleItem} />
       ))}
       <button className="clear-btn" onClick={props.clearPurchased}>
         Clear purchased
@@ -16,3 +16,5 @@ const GroceryList = props => {
     </div>
   );
 };
+
+export default GroceryList;

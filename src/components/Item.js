@@ -9,7 +9,7 @@ const Item = props => {
       //=> {
       //console.log("I'm clicked");
       //  }}
-      className={`item${props.item.purchased ? "purchased" : ""}`}
+      className={`item${props.item.purchased ? " purchased" : ""}`}
     >
       <p>{props.item.name}</p>
     </div>

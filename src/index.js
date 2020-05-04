@@ -37,6 +37,7 @@ const groceries = [
     purchased: false
   }
 ];
+
 class App extends React.Component {
   //Constructor with state
   constructor() {
@@ -50,9 +51,20 @@ class App extends React.Component {
   //use arrow funciton to have access to 'this'
   toggleItem = itemId => {
     console.log(itemId);
-    //this.setState({
-
-    //})
+    this.setState({
+      groceryList: this.state.groceryList.map(item => {
+        if (itemId === item.id) {
+          //change purchased to true, return item
+          return {
+            ...item,
+            purchased: !item.purchased
+          };
+        }
+        //if the item does not match the id clicked
+        //just return item unchanged
+        return item;
+      })
+    });
   };
   //const [groceries, toggleItem] = useState(); The functional way!!!
 

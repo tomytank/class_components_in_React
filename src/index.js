@@ -64,9 +64,21 @@ class App extends React.Component {
       })
     });
   };
-  //const [groceries, toggleItem] = useState(); The functional way!!!
+  //const [groceries, toggleItem] = useState(); The functional way for state!!!
+  //Want to add single item to array on click of add button.
+  //want to
+  addItem = item => {
+    //construct a new item (must match shape of data as below)
+    //    {
+    //  name: "Granola",
+    //  id: 1248,
+    //  purchased: false
+    // }
+    console.log(
+      "Yes, the click Add event is working!! & the input value is: " + item
+    );
+  };
 
-  //<ListForm />
   render() {
     return (
       <div className="App">

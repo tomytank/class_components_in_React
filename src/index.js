@@ -75,6 +75,10 @@ class App extends React.Component {
       purchased: false
     };
 
+    deleteItem = itemId => {
+      console.log(ItemId);
+    };
+
     this.setState({
       groceryList: [...this.state.groceryList, objToAdd]
     });
@@ -84,10 +88,14 @@ class App extends React.Component {
     //  id: 1248,
     //  purchased: false
     // }
-    //this.
-    console.log(
-      "Yes, the click Add event is working!! & the input value is: " + item
-    );
+    /*In App.js add a class property called addItem
+    build the logic to update state wiht the item you've typed into the input
+    passs the function to ListForm
+    in ListForm add a class property that gets called when 
+    the form is submitted and calls the addItem you passed down as a prop*/
+    //console.log(
+    // "Yes, the click Add event is working!! & the input value is: " + item
+    //);
   };
 
   render() {
@@ -95,7 +103,10 @@ class App extends React.Component {
       <div className="App">
         <div className="header">
           <h1>Shopping List</h1>
-          <ListForm addItemFunctionThing={this.addItem} />
+          <ListForm
+            addItemFunctionThing={this.addItem}
+            deleteItem={this.deleteItem}
+          />
         </div>
         <GroceryList
           groceries={this.state.groceryList}

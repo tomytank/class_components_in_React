@@ -64,6 +64,9 @@ class App extends React.Component {
       })
     });
   };
+  deleteItem = itemId => {
+    console.log(itemId);
+  };
   //const [groceries, toggleItem] = useState(); The functional way for state!!!
   //Want to add single item to array on click of add button.
   //want to
@@ -75,9 +78,7 @@ class App extends React.Component {
       purchased: false
     };
 
-    deleteItem = itemId => {
-      console.log(ItemId);
-    };
+    
 
     this.setState({
       groceryList: [...this.state.groceryList, objToAdd]

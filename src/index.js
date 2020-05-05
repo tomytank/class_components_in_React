@@ -68,12 +68,23 @@ class App extends React.Component {
   //Want to add single item to array on click of add button.
   //want to
   addItem = item => {
+    const rand = 1 + Math.floor(Math.random() * 1e10);
+    const objToAdd = {
+      name: item,
+      id: rand,
+      purchased: false
+    };
+
+    this.setState({
+      groceryList: [...this.state.groceryList, objToAdd]
+    });
     //construct a new item (must match shape of data as below)
     //    {
     //  name: "Granola",
     //  id: 1248,
     //  purchased: false
     // }
+    //this.
     console.log(
       "Yes, the click Add event is working!! & the input value is: " + item
     );

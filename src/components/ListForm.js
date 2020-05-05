@@ -5,24 +5,30 @@ class ListForm extends React.Component {
     super(); //!!!!
     //set up some state to allow reading input field
     this.state = {
-      itemName: ""
+      itemName: "",
+      hasBeenEntered: false
     };
   }
   //we have state here and in index.js
   //this is why this is a Class component and other components
   // are functional components (they don't have state and
   //don't have interactivity)
-  handleChanges = e => {
+  handleChanges = event => {
     //update state with each keystroke
-    e.preventDefault();
-    this.setState({ itemName: e.target.value });
+    event.preventDefault();
+    this.setState({ itemName: event.target.value });
+    this.setState({ hasBeenEntered: true });
     //this.props.addItemFunctionThing()
   };
   handleClick = event => {
     event.preventDefault();
     //const itemValue = this.state.itemName;
-    const itemValue = this.handleChanges;
+    const itemValue = this.state.itemName; //collects value from state
     this.props.addItemFunctionThing(itemValue);
+    //passes value to function defined in index.js
+    //which is (the function is) routed here by reference
+    this.setState({ itemName: "" });
+    this.setState({ hasBeenEntered: false });
   };
   //class property to submit form
 

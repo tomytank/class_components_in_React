@@ -33,7 +33,7 @@ class ListForm extends React.Component {
   //class property to submit form
 
   render() {
-    console.log("rendering form");
+    console.log("rendering form from form.js");
     return (
       <form>
         <input

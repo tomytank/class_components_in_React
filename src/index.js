@@ -5,6 +5,7 @@ import ListForm from "./components/ListForm";
 import GroceryList from "./components/GroceryList";
 import "./styles.css";
 
+let newList = [];
 const groceries = [
   {
     name: "Bananas",
@@ -67,6 +68,24 @@ class App extends React.Component {
   //const [groceries, toggleItem] = useState(); The functional way for state!!!
   //Want to add single item to array on click of add button.
   //want to
+
+  clearItem = itemId => {
+    //this.setState(
+    newList = this.state.groceryList.filter(item => {
+      itemId !== item.id;
+    });
+    //return(newList);
+    return this.setState(newList);
+    //);
+  };
+  editItem = () => {
+    console.log("editItem clicked");
+  };
+  //const itemId =0;
+  deleteItem = itemId => {
+    console.log("Index.js deleteItem func->", itemId);
+  };
+
   addItem = item => {
     const rand = 1 + Math.floor(Math.random() * 1e10);
     const objToAdd = {
@@ -111,6 +130,9 @@ class App extends React.Component {
         <GroceryList
           groceries={this.state.groceryList}
           toggleItem={this.toggleItem}
+          deleteItem={this.deleteItem}
+          editItem={this.editItem}
+          clearItem={this.clearItem}
         />
       </div>
     );

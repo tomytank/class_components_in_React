@@ -94,6 +94,10 @@ class App extends React.Component {
       purchased: false
     };
 
+    deleteItem = itemId => {
+      console.log(ItemId);
+    };
+
     this.setState({
       groceryList: [...this.state.groceryList, objToAdd]
     });

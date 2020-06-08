@@ -28,6 +28,7 @@ const Item = props => {
         {" "}
         {edit}&nbsp;
       </span>
+
     </div>
   );
 };

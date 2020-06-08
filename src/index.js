@@ -97,6 +97,8 @@ class App extends React.Component {
     // "Yes, the click Add event is working!! & the input value is: " + item
     //);
   };
+  clearItem = () => {};
+  editItem = () => {};
 
   render() {
     return (
@@ -111,6 +113,7 @@ class App extends React.Component {
         <GroceryList
           groceries={this.state.groceryList}
           toggleItem={this.toggleItem}
+          deleteItem={this.deleteItem}
         />
       </div>
     );

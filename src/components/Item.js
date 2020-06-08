@@ -12,8 +12,20 @@ const Item = props => {
       >
         {props.item.name}
       </p>
+      <span onClick={props.editItem} style={{ float: "right", margin: "10px" }}>
+        {clear}&nbsp;
+      </span>
+      <span
+        onClick={props.clearItem}
+        style={{ float: "right", margin: "10px" }}
+      >
+        {" "}
+        {edit}&nbsp;
+      </span>
+
       <span style={{ float: "right", margin: "10px" }}> {clear}&nbsp;</span>
       <span style={{ float: "right", margin: "10px" }}> {edit}&nbsp;</span>
+
     </div>
   );
 };

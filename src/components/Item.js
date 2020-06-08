@@ -22,6 +22,10 @@ const Item = props => {
         {" "}
         {edit}&nbsp;
       </span>
+
+      <span style={{ float: "right", margin: "10px" }}> {clear}&nbsp;</span>
+      <span style={{ float: "right", margin: "10px" }}> {edit}&nbsp;</span>
+
     </div>
   );
 };

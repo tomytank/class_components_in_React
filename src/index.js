@@ -71,6 +71,7 @@ class App extends React.Component {
 
   clearItem = itemId => {
     console.log("clearItem clicked", itemId);
+
     //this.setState({
     newList = this.state.groceryList.filter(item => {
       itemId !== item.id;
@@ -96,6 +97,7 @@ class App extends React.Component {
   //   />
   // );
   //);
+
   //};
   editItem = () => {
     console.log("editItem clicked");
@@ -111,6 +113,10 @@ class App extends React.Component {
       name: item,
       id: rand,
       purchased: false
+    };
+
+    deleteItem = itemId => {
+      console.log(ItemId);
     };
 
     this.setState({

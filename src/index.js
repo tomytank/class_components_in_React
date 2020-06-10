@@ -49,7 +49,7 @@ class App extends React.Component {
   //Class method to update state
   //use arrow funciton to have access to 'this'
   toggleItem = itemId => {
-    console.log(itemId);
+    console.log("togglebutton clicked", itemId);
     this.setState({
       groceryList: this.state.groceryList.map(item => {
         if (itemId === item.id) {
@@ -70,14 +70,33 @@ class App extends React.Component {
   //want to
 
   clearItem = itemId => {
-    //this.setState(
+    console.log("clearItem clicked", itemId);
+    //this.setState({
     newList = this.state.groceryList.filter(item => {
       itemId !== item.id;
+      //if the item does not match the id clicked
+      //just return item unchanged
+      return newList;
     });
-    //return(newList);
-    return this.setState(newList);
-    //);
+    //});
   };
+
+  //this.setState(
+  //const newList = list.filter((item) => item.id !== id);
+  //newList = this.state.groceryList.filter(item => item.id !== itemId);
+  //return(newList);
+  //this.setState(newList);
+  // return (
+  //   <GroceryList
+  //     groceries={this.state.groceryList}
+  //     toggleItem={this.toggleItem}
+  //     deleteItem={this.deleteItem}
+  //     editItem={this.editItem}
+  //     clearItem={this.clearItem}
+  //   />
+  // );
+  //);
+  //};
   editItem = () => {
     console.log("editItem clicked");
   };

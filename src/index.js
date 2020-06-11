@@ -74,14 +74,33 @@ class App extends React.Component {
 
     //this.setState({
     newList = this.state.groceryList.filter(item => {
-      itemId !== item.id;
-      //if the item does not match the id clicked
-      //just return item unchanged
-      return newList;
+      if (itemId !== item.id) {
+        return {
+          ...newList,
+          item
+        };
+      }
+      return item;
+      //   console.log(newList);
+      // return;
     });
-    //});
-  };
 
+    //{
+
+    // }
+    //return item;
+    // };
+
+    //if the item does not match the id clicked
+    //just return item unchanged
+    console.log("newList is->", newList);
+    return this.setState({ groceryList: newList });
+  };
+  //});
+  //};
+  //this.setState({
+  //groceryList: [...this.state.groceryList, objToAdd]
+  //});
   //this.setState(
   //const newList = list.filter((item) => item.id !== id);
   //newList = this.state.groceryList.filter(item => item.id !== itemId);

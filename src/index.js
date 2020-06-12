@@ -73,14 +73,18 @@ class App extends React.Component {
     console.log("clearItem clicked", itemId);
 
     //this.setState({
+
     newList = this.state.groceryList.filter(item => {
       if (itemId !== item.id) {
+        console.log("itemId is,", itemId);
+        console.log("item is ", item);
+
         return {
           ...newList,
           item
         };
       }
-      return item;
+      //return item;
       //   console.log(newList);
       // return;
     });

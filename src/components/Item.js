@@ -14,7 +14,7 @@ const Item = props => {
         {props.item.name}
       </p>
       <span
-        onClick={props.clearItem}
+        onClick={() => props.clearItem(props.item.id)}
         style={{ float: "right", margin: "10px" }}
       >
         {clear}&nbsp;

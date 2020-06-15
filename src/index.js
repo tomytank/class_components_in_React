@@ -75,55 +75,29 @@ class App extends React.Component {
     //this.setState({
 
     newList = this.state.groceryList.filter(item => {
+      console.log("Item removed was->", this.state.groceryList[itemId]);
       if (itemId !== item.id) {
         console.log("itemId is,", itemId);
-        console.log("item is ", item);
+        //console.log("item removed is ", item);
 
         return {
           ...newList,
           item
         };
       }
+
       //return item;
       //   console.log(newList);
       // return;
     });
 
-    //{
-
-    // }
-    //return item;
-    // };
-
-    //if the item does not match the id clicked
-    //just return item unchanged
     console.log("newList is->", newList);
     return this.setState({ groceryList: newList });
   };
-  //});
-  //};
-  //this.setState({
-  //groceryList: [...this.state.groceryList, objToAdd]
-  //});
-  //this.setState(
-  //const newList = list.filter((item) => item.id !== id);
-  //newList = this.state.groceryList.filter(item => item.id !== itemId);
-  //return(newList);
-  //this.setState(newList);
-  // return (
-  //   <GroceryList
-  //     groceries={this.state.groceryList}
-  //     toggleItem={this.toggleItem}
-  //     deleteItem={this.deleteItem}
-  //     editItem={this.editItem}
-  //     clearItem={this.clearItem}
-  //   />
-  // );
-  //);
 
-  //};
-  editItem = () => {
-    console.log("editItem clicked");
+  editItem = itemID => {
+    console.log("editItem clicked", itemID);
+
   };
   //const itemId =0;
   deleteItem = itemId => {

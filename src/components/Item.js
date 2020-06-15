@@ -21,7 +21,7 @@ const Item = props => {
       </span>
       <span
         onClick={() => {
-          props.deleteItem(props.item.id);
+          props.editItem(props.item.id);
         }}
         style={{ float: "right", margin: "10px" }}
       >

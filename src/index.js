@@ -9,31 +9,37 @@ let newList = [];
 const groceries = [
   {
     name: "Bananas",
+    category: "Fruit",
     id: 123,
     purchased: false
   },
   {
     name: "Tortillas",
+    category: "Fruit",
     id: 124,
     purchased: false
   },
   {
     name: "Milk",
+    category: "Fruit",
     id: 1235,
     purchased: false
   },
   {
     name: "Pizza Sauce",
+    category: "Fruit",
     id: 1246,
     purchased: false
   },
   {
     name: "Raw Honey",
+    category: "Fruit",
     id: 1237,
     purchased: false
   },
   {
     name: "Granola",
+    category: "Fruit",
     id: 1248,
     purchased: false
   }
@@ -44,6 +50,9 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = { groceryList: groceries };
+    //this.state = {
+    // groceryToEdit: groceries
+    //};
   }
 
   //Class method to update state
@@ -71,7 +80,6 @@ class App extends React.Component {
 
   clearItem = itemId => {
     console.log("clearItem clicked", itemId);
-    //this.setState({
 
     newList = this.state.groceryList.filter(item => {
       console.log("Item removed was->", this.state.groceryList[itemId]);
